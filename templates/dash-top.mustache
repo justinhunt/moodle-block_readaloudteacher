@@ -1,0 +1,48 @@
+{{#klass_overview_data}}
+<div class="teacherdashtopsection">
+    <div class="container mt-2 mb-5">
+        <div class="row">
+            {{#iscoursescreen}}
+                {{#indicators}}
+                    {{>block_readaloudteacher/dash-top-item2}}
+                {{/indicators}}
+            {{/iscoursescreen}}
+            {{^iscoursescreen}}
+                {{#indicators}}
+                    {{>block_readaloudteacher/dash-top-item3}}
+                {{/indicators}}
+            {{/iscoursescreen}}
+
+            <div class="col col-lg-4 text-right">
+                {{#iscoursescreen}}
+                    {{#klass}}
+                    <div class="classbuttons text-center mt-4">
+                            <a href="{{{config.wwwroot}}}/blocks/readaloudteacher/klasses/klassreports.php?klassid={{klass.id}}&klasstype={{klass.type}}&returnurl={{{config.wwwroot}}}/course/view.php?id={{courseid}}&courseid={{courseid}}"
+                            class="btn btn-primary mr-1 mb-2">
+                            {{#pix}}bar-chart, block_readaloudteacher{{/pix}}{{#str}}classreports, block_readaloudteacher{{/str}}
+                            </a>
+                            <a href="{{{config.wwwroot}}}/blocks/readaloudteacher/klasses/assign.php?id={{klass.id}}&klasstype={{klass.type}}&courseid={{courseid}}&returnurl={{{config.wwwroot}}}/course/view.php?id={{courseid}}&courseid={{courseid}}"
+                            class="btn btn-secondary mr-1 mb-2">
+                            {{#pix}}users, block_readaloudteacher{{/pix}}{{#str}}assign, block_readaloudteacher{{/str}}
+                            </a>
+                    </div>
+                    {{/klass}}
+                {{/iscoursescreen}}
+            </div>
+        </div>
+    </div>
+</div>
+
+{{^iscoursescreen}}
+    {{#klass}}
+        <a href="{{{config.wwwroot}}}/blocks/readaloudteacher/klasses/klassreports.php?klassid={{klass.id}}&klasstype={{klass.type}}&returnurl={{{config.wwwroot}}}/course/view.php?id={{courseid}}&courseid={{courseid}}&showtables={{#ischartsview}}1{{/ischartsview}}{{#ischartsview}}0{{/ischartsview}}"
+            class="btn btn-secondary pull-right mr-1 mb-2" title="{{#ischartsview}}{{#str}}showastables, block_readaloudteacher{{/str}}{{/ischartsview}}{{^ischartsview}}{{#str}}showascharts, block_readaloudteacher{{/str}}{{/ischartsview}}">
+            {{#ischartsview}}{{#pix}}e/table, core{{/pix}}{{/ischartsview}}
+            {{^ischartsview}}{{#pix}}bar-chart, block_readaloudteacher{{/pix}}{{/ischartsview}}
+        </a>
+        <a class="btn btn-secondary pull-right mr-1 mb-2" href="{{{config.wwwroot}}}/course/view.php?id={{courseid}}">
+            {{#pix}}chevron-up, block_readaloudteacher{{/pix}}{{#str}}allclasses, block_readaloudteacher{{/str}}
+        </a>
+    {{/klass}}
+{{/iscoursescreen}}
+{{/klass_overview_data}}

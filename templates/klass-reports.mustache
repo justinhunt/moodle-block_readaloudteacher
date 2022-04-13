@@ -1,0 +1,22 @@
+<div class="block_readaloudteacher_content block-readaloudteacher-charts-container">
+    {{>block_readaloudteacher/dash-top}}
+    <h2 class="blockheading">{{#str}}charts, block_readaloudteacher{{/str}}</h2>
+    <div>
+        <div class="highcharts-chart" id="highchart-readings-completed"></div>
+    </div>
+    <div>
+        <div class="highcharts-chart" id="highchart-wpm"></div>
+    </div>
+    <div>
+        <div class="highcharts-chart" id="highchart-accuracy"></div>
+    </div>
+    <div>
+        <div class="highcharts-chart" id="highchart-quiz"></div>
+    </div>
+</div>
+
+{{!These divs have no user visible content.  They are used to add JSON data to the page so that JS can read it for the charts}}
+<div id="pagedata" data-klassname="{{#klass_overview_data}}{{klass.name}}{{/klass_overview_data}}" data-wpmbenchmarks="{{wpmbenchmarksjson}}"></div>
+{{#highchartsdatajson}}
+    <div id="{{chartid}}" class="highcharts-data{{#isdrilldown}} drilldown-dataseries{{/isdrilldown}}" data-chart-class="{{chartclass}}" data-series-type="{{seriestype}}" data-highcharts-data="{{json}}"></div>
+{{/highchartsdatajson}}

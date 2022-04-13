@@ -1,0 +1,9 @@
+Version 1.1.3 Build 2019092500
+-fixed issue where empty klasses displayed all data on summary page(incorrect), but nothing in chart page (correct)
+-fixed issue where latest attempt on klass summary was actually first attempt
+
+Version 1.1.2 (Build 2019082000)
+- improved permissions so it will show on site dash if is a teacher for that course
+
+Version 1.1.0(Build 2018041000)
+-Implemented new Moodle Privacy API

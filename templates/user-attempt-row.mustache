@@ -1,0 +1,18 @@
+<tr class="attemptrow" onclick="window.location='{{{config.wwwroot}}}/mod/readaloud/grading.php?n={{readaloudid}}&action=gradenow&attemptid={{attemptid}}&returnurl={{{returnurl}}}'">
+    <td class="col-reading text-left">
+        <a href="{{{config.wwwroot}}}/mod/readaloud/grading.php?n={{readaloudid}}&action=gradenow&attemptid={{attemptid}}&returnurl={{{returnurl}}}">{{readingname}}</a>
+    </td>
+    <td class="col-date">{{date}}</td>
+    <td class="col-wpm">{{wordsperminute}}</td>
+    <td class="col-quiz">{{quiz}}%</td>
+    <td class="col-accuracy">{{accuracy}}%</td>
+    <td class="col-grading text-center">
+        {{#isaigrade}}{{#pix}}cogs, block_readaloudteacher{{/pix}}{{#str}}ai, block_readaloudteacher{{/str}}{{/isaigrade}}
+        {{^isaigrade}}{{#pix}}pencil, gousergrading{{/pix}}{{#str}}human, block_readaloudteacher{{/str}}{{/isaigrade}}
+    </td>
+    <td class="col-gradebutton">
+    <a class="btn btn-secondary" href="{{{config.wwwroot}}}/mod/readaloud/grading.php?n={{readaloudid}}&action=gradenow&attemptid={{attemptid}}&returnurl={{{returnurl}}}">
+        {{#str}}gousergrading, block_readaloudteacher{{/str}}
+    </a>
+    </td>
+</tr>

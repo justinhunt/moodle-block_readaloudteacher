@@ -1,0 +1,43 @@
+<div class="block_readaloudteacher_content block-readaloudteacher-charts-container">
+    {{#overview_data}}
+        {{>block_readaloudteacher/user-report-top}}
+    {{/overview_data}}
+    <h2 class="blockheading">{{#str}}charts, block_readaloudteacher{{/str}}</h2>
+    <div>
+        <div class="highcharts-chart" id="highchart-wpm"></div>
+    </div>
+    <div>
+        <div class="highcharts-chart" id="highchart-accuracy"></div>
+    </div>
+    <div>
+        <div class="highcharts-chart" id="highchart-quiz"></div>
+    </div>
+    <div class="user-attempts mt-3">
+        <h2 class="blockheading mb-3">{{#str}}attemptshistory, block_readaloudteacher{{/str}}</h2>
+        <div class="ml-5">
+            <table id="user-attempts">
+                <tr class="header-row">
+                    <td class="col-reading text-left">{{#str}}colreading, block_readaloudteacher{{/str}}</td>
+                    <td class="col-date">{{#str}}coldate, block_readaloudteacher{{/str}}</td>
+                    <td class="col-wpm">{{#str}}colwpm, block_readaloudteacher{{/str}}</td>
+                    <td class="col-quiz">{{#str}}quiz, block_readaloudteacher{{/str}}</td>
+                    <td class="col-accuracy">{{#str}}accuracy, block_readaloudteacher{{/str}}</td>
+                    <td class="col-grading text-center">{{#str}}grading, block_readaloudteacher{{/str}}</td>
+                    <td class="col-gradebutton">{{#str}}action, block_readaloudteacher{{/str}}</td>
+                </tr>
+                {{#userattempts}}
+                    {{>block_readaloudteacher/user-attempt-row}}
+                {{/userattempts}}
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+{{!These divs have no user visible content.  They are used to add JSON data to the page so that JS can read it for the charts}}
+<div id="pagedata" data-wpmbenchmarks="{{wpmbenchmarksjson}}"></div>
+{{#highchartsdatajson}}
+    <div id="{{chartid}}" class="highcharts-data" data-chart-class="{{chartclass}}" data-series-type="{{seriestype}}" data-highcharts-data="{{json}}"></div>
+{{/highchartsdatajson}}
+

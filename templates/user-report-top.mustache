@@ -1,0 +1,36 @@
+<div class="teacherdashtopsection">
+    <div class="container mt-2 mb-5">
+        <div class="row">
+            <div class="col col-lg-1 text-center"></div>
+            <div class="col col-lg-2 text-center">
+                <div class="user-image">
+                    <div class="dashheader">{{userfullname}}</div>
+                    {{{userimage}}}
+
+                </div>
+            </div>
+
+            {{#indicators}}
+                {{>block_readaloudteacher/user-top-item}}
+            {{/indicators}}
+            <div class="col col-lg-1 text-center"></div>
+        </div>
+    </div>
+</div>
+
+{{#returnklass}}
+    <div class="buttons">
+        <a class="btn btn-secondary pull-right mr-1 mb-2"
+           href="{{{config.wwwroot}}}/blocks/readaloudteacher/klasses/userreports.php?userid={{userid}}&returnklassid={{returnklass.id}}&returnklasstype={{returnklass.type}}&courseid={{courseid}}&showtables={{#ischartsview}}1{{/ischartsview}}{{^ischartsview}}0{{/ischartsview}}">
+            {{#ischartsview}}{{#pix}}e/table{{/pix}}{{/ischartsview}}
+            {{^ischartsview}}{{#pix}}bar-chart, block_readaloudteacher{{/pix}}{{/ischartsview}}
+        </a>
+        <a class="btn btn-secondary pull-right mr-1 mb-2" href="{{{config.wwwroot}}}/course/view.php?id={{courseid}}">
+        {{#pix}}chevron-up, block_readaloudteacher{{/pix}}{{#str}}allclasses, block_readaloudteacher{{/str}}
+        </a>
+        <a class="btn btn-secondary pull-right mr-1 mb-2" href="{{{config.wwwroot}}}/blocks/readaloudteacher/klasses/klassreports.php?klassid={{returnklass.id}}&klasstype={{returnklass.type}}&courseid={{courseid}}">
+            {{#pix}}chevron-left, block_readaloudteacher{{/pix}}{{returnklass.name}}
+        </a>
+
+    </div>
+{{/returnklass}}

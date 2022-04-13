@@ -1,0 +1,180 @@
+.block_readaloudteacher_content,
+.block_readaloudteacher {
+    font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    overflow: hidden;
+}
+.block_readaloudteacher_triggerbutton {
+    color: #002f8f;
+    margin: 10px;
+    padding: 10px;
+}
+
+div.block_readaloudteacher_onecoursecontainer {
+    margin-bottom: 30px;
+    border: solid 1px #CCCCCC;
+}
+
+div.block_readaloudteacher_klassbuttonscontainer {
+    float: right;
+    margin: 15px;
+}
+
+img.block_readaloudteacher_passagepicture {
+    width: 50px;
+    height: auto;
+}
+
+.dataTables_length label {
+    margin-right: 20px;
+}
+
+div.block_readaloudteacher_getstartedcontainer {
+    margin: 10px;
+    display: table;
+    padding: 10px;
+    border: 1px solid black;
+    text-align: center;
+    width: 100%;
+}
+div.block_readaloudteacher_manageklasses_container {
+    float: right;
+}
+
+.block_readaloudteacher_content .dashheader {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #676767;
+    min-height: 3em;
+    margin: 0 10px 0 10px;
+}
+.block_readaloudteacher_content .user-image .dashheader {
+    min-height: 2em;
+}
+.block_readaloudteacher_content .numeric-value {
+    font-size: 4em;
+    font-weight: bold;
+    height: 60px;
+    line-height: 60px;
+}
+@media screen and (max-width: 800px) {
+    .block_readaloudteacher_content .numeric-value {
+        font-size: 2.5em;
+        transition: 0.5s font-size ease-in-out;
+    }
+}
+
+.block_readaloudteacher_content #dashtopsection {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-bottom: 1px solid #efefef;
+    background-color: #f9f9ff;
+}
+.block_readaloudteacher_content .card-body .card-text {
+    margin-top: 0;
+}
+
+.block_readaloudteacher_content.card,
+.block_readaloudteacher.card {
+    border: 0;
+}
+.block_readaloudteacher_content .blockheading,
+.block_readaloudteacher .blockheading {
+    margin-bottom: 20px;
+    display: inline-block;
+    border-bottom: 3px solid dodgerblue;
+}
+.block_readaloudteacher_content .btn#manageclasses {
+    position: absolute;
+    top: 10px;
+    right: 80px;
+}
+
+table.dataTable tbody td.block_readaloudteacher_cell_user_report_go {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: center;
+}
+.block_readaloudteacher_cell_user_report_go .btn {
+    padding: 0.3rem .75rem;
+}
+.block_readaloudteacher_cell_user_report_lastqscore,
+.block_readaloudteacher_cell_user_report_lastwpm {
+    text-align: center;
+}
+.block-readaloudteacher-charts-container div.highcharts-chart {
+    min-width: 300px;
+    height: 400px;
+    margin: 0 auto 60px auto;
+}
+.block-readaloudteacher-charts-container div.highcharts-chart text.highcharts-drilldown-axis-label {
+    text-decoration: none !important;
+    color: #373A3C !important;
+    fill: #373a3c !important;
+}
+.block-readaloudteacher-charts-container .highcharts-series-inactive,
+.block-readaloudteacher-charts-container .highcharts-series-hover {
+    opacity: 1 !important;
+}
+.block-readaloudteacher-charts-container .tooltipscore {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+.block-readaloudteacher-charts-container table#user-attempts .header-row {
+    font-weight: bold;
+    background-color: whitesmoke
+}
+.block-readaloudteacher-charts-container table#user-attempts {
+    margin: auto;
+}
+.block-readaloudteacher-charts-container table#user-attempts td {
+    padding: 1em 2em 1em 2em;
+    text-align: right;
+}
+.block-readaloudteacher-charts-container table#user-attempts td a {
+    color: inherit;
+    text-decoration: none;
+}
+.block-readaloudteacher-charts-container table#user-attempts tr.attemptrow:hover {
+    background-color: dodgerblue;
+    color: #fff;
+    transition: 0.3s all ease-in-out;
+}
+.block-readaloudteacher-charts-container table#user-attempts tr.attemptrow:hover .btn {
+    color: #373a3c;
+}
+.block-readaloudteacher-charts-container .benchmarks {
+    font-size: 0.9em;
+}
+.block_readaloudteacher_content .teacherdashtopsection {
+    background-color: #f9f9ff;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+}
+
+#page-blocks-readaloudteacher-klasses-klassreports #region-main,
+#page-blocks-readaloudteacher-klasses-userreports #region-main {
+    border: 0;
+}
+.block_readaloudteacher_content .classbuttons {
+    max-width: 165px;
+}
+.block_readaloudteacher_content .classbuttons a.btn {
+    width: 100%;
+}
+.block_readaloudteacher_classescontainer .nav-tabs .nav-link.active {
+    color: #fff;
+    background-color: #1177d1;
+}
+.block_readaloudteacher_classescontainer .nav-tabs {
+    border-bottom: 0;
+}
+.block_readaloudteacher_classescontainer .nav-item {
+    border-top: 1px solid lightgray;
+    border-left: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+}
+.block_readaloudteacher_content .highcharts-title {
+    font-size: 2em;
+    font-weight: bold;
+}
