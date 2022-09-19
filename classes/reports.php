@@ -208,13 +208,13 @@ class reports
             if (!$therecord->sessiontime) {
                 $onedata->wpm = $therecord->ai_wpm;
                 $onedata->accuracy = $therecord->ai_accuracy;
-                $onedata->errorrate = \mod_readaloud\utils::calc_error_rate( $therecord->ai_errorcount,$therecord->ai_sessionendword);
-                $onedata->scrate=\mod_readaloud\utils::calc_sc_rate($therecord->ai_errorcount,$therecord->ai_sccount);
+                $onedata->errorrate = common::calc_error_rate( $therecord->ai_errorcount,$therecord->ai_sessionendword);
+                $onedata->scrate=common::calc_sc_rate($therecord->ai_errorcount,$therecord->ai_sccount);
             }else{
                 $onedata->wpm = $therecord->h_wpm;
                 $onedata->accuracy = $therecord->h_accuracy;
-                $onedata->errorrate = \mod_readaloud\utils::calc_error_rate( $therecord->h_errorcount,$therecord->h_sessionendword);
-                $onedata->scrate=\mod_readaloud\utils::calc_sc_rate($therecord->h_errorcount,$therecord->h_sccount);
+                $onedata->errorrate = common::calc_error_rate( $therecord->h_errorcount,$therecord->h_sessionendword);
+                $onedata->scrate=common::calc_sc_rate($therecord->h_errorcount,$therecord->h_sccount);
             }
             //linkify WPM(gradenow page) and RecordName(RunningRecord actrivity report)
             if($links) {

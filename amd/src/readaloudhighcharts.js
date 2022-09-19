@@ -1,4 +1,5 @@
-define(['jquery', 'core/config', 'core/str', 'block_readaloudteacher/readaloudhighcharts'], function($, config, Str) {
+define(['jquery', 'core/config', 'core/str'],
+    function($, config, Str) {
     "use strict";
 
     var hcGlobal;

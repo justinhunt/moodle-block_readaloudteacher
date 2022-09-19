@@ -67,7 +67,7 @@ class common
 
 
         $fs = get_file_storage();
-        $filearea=\mod_readaloud\constants::PASSAGEPICTURE_FILEAREA;
+        $filearea='passagepicture';//\mod_readaloud\constants::PASSAGEPICTURE_FILEAREA;
         $files = $fs->get_area_files($modulecontext->id,  constants::M_RSCOMP,$filearea);
         foreach ($files as $file) {
             $filename = $file->get_filename();
@@ -370,5 +370,31 @@ class common
                 $klasses = [];
         }
         return $klasses;
+    }
+
+    //calculate the Error rate
+    //see https://www.readinga-z.com/helpful-tools/about-running-records/scoring-a-running-record/
+    public static function calc_error_rate($errorcount,$wordcount){
+        if($errorcount > 0 && $wordcount > 0) {
+            $ret = "1:" . round($wordcount / $errorcount);
+        }else if($wordcount > 0){
+            $ret = "-:" . $wordcount;
+        }else{
+            $ret = "-:-";
+        }
+        return $ret;
+    }
+
+    //calculate the Self Correction rate
+    //See https://www.readinga-z.com/helpful-tools/about-running-records/scoring-a-running-record/
+    public static function calc_sc_rate($errorcount,$sccount){
+        if($errorcount > 0 && $sccount > 0) {
+            $ret = "1:" . round(($errorcount + $sccount) / $sccount);
+        }else if($errorcount > 0){
+            $ret = "-:" . $errorcount;
+        }else{
+            $ret = "-:-";
+        }
+        return $ret;
     }
 }//end of class
