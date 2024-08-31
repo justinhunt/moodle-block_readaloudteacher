@@ -318,7 +318,7 @@ class reports
     }
 
     //Users
-    public static function fetch_klassreport_summary($thecoursedata,$links, $klassmemberids=false, $klass)
+    public static function fetch_klassreport_summary($thecoursedata,$links, $klassmemberids, $klass)
     {
         $sectiontitle = $thecoursedata->fullname;
         $reportname = 'user_report';
