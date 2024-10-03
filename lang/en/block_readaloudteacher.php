@@ -172,7 +172,7 @@ $string['getstartedmessage']= "Create a class to start tracking your students.";
 $string['readaloudteacherarea']= "ReadAloud Teacher Area";
 
 $string['totalreadings'] = 'Total readings';
-$string['averagewordsperminute'] = 'Average words per minute';
+$string['averagewordsperminute'] = 'Average WPM';
 $string['averageaccuracy'] = 'Average accuracy (%)';
 $string['averagequiz'] = 'Average quiz (%)';
 $string['readingprogressreport'] = 'Reading Progress Report: {$a}';

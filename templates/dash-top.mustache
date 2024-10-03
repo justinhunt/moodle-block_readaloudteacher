@@ -21,10 +21,12 @@
                             class="btn btn-primary mr-1 mb-2">
                             {{#pix}}bar-chart, block_readaloudteacher{{/pix}}{{#str}}classreports, block_readaloudteacher{{/str}}
                             </a>
-                            <a href="{{{config.wwwroot}}}/blocks/readaloudteacher/klasses/assign.php?id={{klass.id}}&klasstype={{klass.type}}&courseid={{courseid}}&returnurl={{{config.wwwroot}}}/course/view.php?id={{courseid}}&courseid={{courseid}}"
-                            class="btn btn-secondary mr-1 mb-2">
-                            {{#pix}}users, block_readaloudteacher{{/pix}}{{#str}}assign, block_readaloudteacher{{/str}}
-                            </a>
+                            {{#iscustomklass}}
+                                <a href="{{{config.wwwroot}}}/blocks/readaloudteacher/klasses/assign.php?id={{klass.id}}&klasstype={{klass.type}}&courseid={{courseid}}&returnurl={{{config.wwwroot}}}/course/view.php?id={{courseid}}&courseid={{courseid}}"
+                                class="btn btn-secondary mr-1 mb-2">
+                                {{#pix}}users, block_readaloudteacher{{/pix}}{{#str}}assign, block_readaloudteacher{{/str}}
+                                </a>
+                            {{/iscustomklass}}
                     </div>
                     {{/klass}}
                 {{/iscoursescreen}}

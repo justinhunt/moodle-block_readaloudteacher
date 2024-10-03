@@ -92,6 +92,7 @@ class klass_charts implements \renderable, \templatable
         $this->klassmemberids= $klass->fetch_klassmemberids();
         $this->context = \context_course::instance($thecoursedata->id);
         $this->ischartsview = $ischartsview;
+        $this->iscustomklass=($klass->type==constants::M_KLASS_CUSTOM);
 
     }
 

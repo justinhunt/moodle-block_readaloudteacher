@@ -185,19 +185,28 @@ class common
   *
   */
     public static function fetch_wpmbenchmarks($courseid, $fortemplate = false){
-        global $DB;
-        //$records = $DB->get_records('labelreadaloud',array('course'=>$courseid));
-        $records = false;
+        $course= get_course($courseid);
         $benchmarks=[];
-        if($records){
-            $record = array_pop($records);
-            $benchmarks[constants::M_WPMBENCHMARK_FALL]=$record->benchmarkfall;
-            $benchmarks[constants::M_WPMBENCHMARK_WINTER]=$record->benchmarkwinter;
-            $benchmarks[constants::M_WPMBENCHMARK_SPRING]=$record->benchmarkspring;
-        }else{
-            $benchmarks[constants::M_WPMBENCHMARK_FALL]=0;
-            $benchmarks[constants::M_WPMBENCHMARK_WINTER]=0;
-            $benchmarks[constants::M_WPMBENCHMARK_SPRING]=0;
+        $benchmarks[constants::M_WPMBENCHMARK_FALL]=0;
+        $benchmarks[constants::M_WPMBENCHMARK_WINTER]=0;
+        $benchmarks[constants::M_WPMBENCHMARK_SPRING]=0;
+        if($course){
+            $handler = \core_customfield\handler::get_handler('core_course', 'course');
+            $customfields = $handler->get_instance_data($courseid);
+            if($customfields ) {
+                foreach ($customfields as $f) {
+                    if ($f->get_field()->get('shortname') === 'benchmark_wpm_fall' &&
+                        is_numeric($f->get_value())) {
+                        $benchmarks[constants::M_WPMBENCHMARK_FALL] = $f->get_value();
+                    } elseif ($f->get_field()->get('shortname') === 'benchmark_wpm_winter' &&
+                        is_numeric($f->get_value())) {
+                        $benchmarks[constants::M_WPMBENCHMARK_WINTER] = $f->get_value();
+                    } elseif ($f->get_field()->get('shortname') === 'benchmark_wpm_spring' &&
+                        is_numeric($f->get_value())) {
+                        $benchmarks[constants::M_WPMBENCHMARK_SPRING] = $f->get_value();
+                    }
+                }
+            }
         }
         if ($fortemplate) {
             return array(

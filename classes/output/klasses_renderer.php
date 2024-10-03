@@ -26,7 +26,7 @@ class klasses_renderer extends \plugin_renderer_base {
             $manageclassesstr = get_string('manageklasses', constants::M_COMP);
             foreach($coursedata as $thecourse){
 
-
+                //fetch course
                 $coursetitle = $this->output->heading($thecourse->fullname,5);
 
                 //fetch classes
