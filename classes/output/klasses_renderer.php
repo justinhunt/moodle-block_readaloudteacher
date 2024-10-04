@@ -551,7 +551,9 @@ class klasses_renderer extends \plugin_renderer_base {
         $opts['filterlabel']=$filterlabel;
         $opts['tableprops']=$tableprops;
         $this->page->requires->js_call_amd( constants::M_COMP . "/datatables", 'init', array($opts));
-        $this->page->requires->css( new \moodle_url('https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css'));
+        if (!$this->page->headerprinted && !$this->page->requires->is_head_done()) {
+            $this->page->requires->css( new \moodle_url('https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css'));
+        }
     }
 
     /*

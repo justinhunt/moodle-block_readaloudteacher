@@ -26,37 +26,37 @@ defined('MOODLE_INTERNAL') || die();
 
 use block_readaloudteacher\constants;
 
-$capabilities = array(
+$capabilities = [
 
-    'block/' . constants::M_NAME. ':myaddinstance' => array(
+    'block/' . constants::M_NAME. ':myaddinstance' => [
         'captype' => 'write',
         'contextlevel' => CONTEXT_SYSTEM,
-        'archetypes' => array(
-            'user' => CAP_ALLOW
-        ),
+        'archetypes' => [
+            'user' => CAP_ALLOW,
+        ],
 
-        'clonepermissionsfrom' => 'moodle/my:manageblocks'
-    ),
+        'clonepermissionsfrom' => 'moodle/my:manageblocks',
+    ],
 
-    'block/' . constants::M_NAME. ':addinstance' => array(
+    'block/' . constants::M_NAME. ':addinstance' => [
         'riskbitmask' => RISK_SPAM | RISK_XSS,
         'captype' => 'write',
         'contextlevel' => CONTEXT_BLOCK,
-        'archetypes' => array(
+        'archetypes' => [
             'editingteacher' => CAP_ALLOW,
-            'manager' => CAP_ALLOW
-        ),
+            'manager' => CAP_ALLOW,
+        ],
 
-        'clonepermissionsfrom' => 'moodle/site:manageblocks'
-    ),
-        'block/' . constants::M_NAME. ':manageklass' => array(
+        'clonepermissionsfrom' => 'moodle/site:manageblocks',
+    ],
+        'block/' . constants::M_NAME. ':manageklass' => [
                 'riskbitmask' => RISK_SPAM | RISK_XSS,
                 'captype' => 'write',
                 'contextlevel' => CONTEXT_BLOCK,
-                'archetypes' => array(
+                'archetypes' => [
                         'editingteacher' => CAP_ALLOW,
                         'manager' => CAP_ALLOW,
                         'teacher' => CAP_ALLOW,
-                )
-        )
-);
+                ],
+        ],
+];
